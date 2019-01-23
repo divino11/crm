@@ -1,0 +1,75 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Awesome-bootstrap-checkbox
+@import "~awesome-bootstrap-checkbox/awesome-bootstrap-checkbox";
+
+// Fontawesome
+@import "~font-awesome/css/font-awesome.min.css";
+
+
+:active, :hover, input:focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.h100vh {
+  height: 100vh;
+}
+
+.wrapper-black {
+  background-color: $body-bg !important;
+}
+
+.bg-main-red {
+  background-color: $main-red !important;
+}
+
+.btn-primary {
+  background-color: $main-red !important;
+  color: $white !important;
+  border: 1px solid $main-red !important;
+}
+
+.card-header {
+  background-color: $main-red;
+  color: $white;
+}
+
+.card {
+  border: none;
+}
+
+.text-main-red {
+  color: $main-red !important;
+}
+
+.navbar-collapse {
+  flex-basis: auto;
+  flex-grow: 0;
+  margin: auto;
+}
+
+.navbar {
+  align-items: start;
+}
+
+.navbar-laravel {
+  background-color: #151515;
+}
+
+.navbar-laravel .nav-link {
+  color: $white !important;
+}
