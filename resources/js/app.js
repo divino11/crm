@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -30,4 +29,25 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app'
+});
+
+$(document).ready(function () {
+    $('.menu_dropdown').click(function () {
+        $('.menu_dropdown ul').slideUp();
+        $('.menu_dropdown a').attr("aria-expanded", "false");
+        $('.menu_dropdown a').css("color", "#4a5161");
+        $('.menu_dropdown ul').attr("aria-expanded", "false");
+        if ($(this).children('ul').css('display') == 'block') {
+            $(this).children('ul').slideUp();
+            $('.menu_dropdown a').css("color", "#4a5161");
+            $(this).children('a').attr("aria-expanded", "false");
+            $(this).children('ul').attr("aria-expanded", "false");
+        }
+        if ($(this).children('ul').css('display') == 'none') {
+            $(this).children('ul').slideDown();
+            $(this).children('a').css("color", "#4a5161");
+            $(this).children('a').attr("aria-expanded", "true");
+            $(this).children('ul').attr("aria-expanded", "true");
+        }
+    });
 });

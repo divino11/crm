@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "awesome-bootstrap-checkbox": "^1.0.1",
+        "flat-icons": "^1.0.0",
         "font-awesome": "^4.7.0"
     }
 }

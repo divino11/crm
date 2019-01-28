@@ -29,6 +29,9 @@ If you're not in the mood to read, [Laracasts](https://laracasts.com) contains o
 
 ## Changelog
 
+## v.0.0.2
+* Update new template dashboard
+
 ## v.0.0.1
 * Install Laravel
 * Add Auth

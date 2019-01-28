@@ -47956,6 +47956,28 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+$(document).ready(function () {
+  $('.menu_dropdown').click(function () {
+    $('.menu_dropdown ul').slideUp();
+    $('.menu_dropdown a').attr("aria-expanded", "false");
+    $('.menu_dropdown a').css("color", "#4a5161");
+    $('.menu_dropdown ul').attr("aria-expanded", "false");
+
+    if ($(this).children('ul').css('display') == 'block') {
+      $(this).children('ul').slideUp();
+      $('.menu_dropdown a').css("color", "#4a5161");
+      $(this).children('a').attr("aria-expanded", "false");
+      $(this).children('ul').attr("aria-expanded", "false");
+    }
+
+    if ($(this).children('ul').css('display') == 'none') {
+      $(this).children('ul').slideDown();
+      $(this).children('a').css("color", "#4a5161");
+      $(this).children('a').attr("aria-expanded", "true");
+      $(this).children('ul').attr("aria-expanded", "true");
+    }
+  });
+});
 
 /***/ }),
 
