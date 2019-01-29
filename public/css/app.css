@@ -11133,3 +11133,18 @@ input:focus {
   width: 100%;
 }
 
+.table th,
+.table td {
+  border-top: none;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: white;
+}
+
+.search-resource {
+  border-radius: 10px;
+  border: 1px solid #d4d5d8;
+  padding: 5px 10px;
+}
+

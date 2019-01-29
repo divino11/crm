@@ -29,6 +29,11 @@ If you're not in the mood to read, [Laracasts](https://laracasts.com) contains o
 
 ## Changelog
 
+## v.0.0.3
+* Add Clients Model and Controller
+* Create table template for resource
+* Add search for table
+
 ## v.0.0.2
 * Update new template dashboard
 

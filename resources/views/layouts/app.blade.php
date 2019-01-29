@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,7 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="overflow-hidden">
+<body>
 <header class="topbar">
     <div class="container-fluid">
         <nav class="navbar top-navbar navbar-expand-md navbar-light">
@@ -268,7 +269,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <div id="app">
+                <div id="app" class="position-fixed">
                     <nav class="navbar navbar-expand-md navbar-light h100vh">
                         <aside class="left-sidebar">
                             <div class="w-100 text-center">
@@ -314,18 +315,18 @@
                                         <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"
                                                                      aria-expanded="false"><i
                                                         class="fa fa-users"></i><span
-                                                        class="hide-menu">Users</span></a>
+                                                        class="hide-menu">Clients</span></a>
                                             <ul aria-expanded="false" class="collapse">
-                                                <li><a href="https://full.mintone.xyz/users" class="menu_dropdown">Manage
-                                                        Users</a></li>
+                                                <li><a href="{{ route('clients.index') }}" class="menu_dropdown">Manage
+                                                        Clients</a></li>
                                                 <li><a href="https://full.mintone.xyz/user/create"
                                                        class="menu_dropdown">Add
                                                         New
-                                                        User</a>
+                                                        Client</a>
                                                 </li>
                                                 <li><a href="https://full.mintone.xyz/user/deleted"
                                                        class="menu_dropdown">Deleted
-                                                        Users</a>
+                                                        Client</a>
                                                 </li>
                                             </ul>
                                         </li>
