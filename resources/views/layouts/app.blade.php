@@ -319,7 +319,7 @@
                                             <ul aria-expanded="false" class="collapse">
                                                 <li><a href="{{ route('clients.index') }}" class="menu_dropdown">Manage
                                                         Clients</a></li>
-                                                <li><a href="https://full.mintone.xyz/user/create"
+                                                <li><a href="{{ route('clients.create') }}"
                                                        class="menu_dropdown">Add
                                                         New
                                                         Client</a>
@@ -396,6 +396,11 @@
             </div>
             <div class="col-md-10">
                 <div class="content-main">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     @yield('content')
                 </div>
             </div>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Clients;
 
 use App\Clients;
+use App\Http\Requests\Clients\RequestClientsManagment;
+use DemeterChain\C;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -25,18 +27,21 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param RequestClientsManagment $request
+     * @return void
      */
-    public function store(Request $request)
+    public function store(RequestClientsManagment $request)
     {
-        //
+        $client = new Clients($request->all());
+        $client->save();
+
+        return redirect()->route('clients.index')->with('status', 'Client has been create');
     }
 
     /**
