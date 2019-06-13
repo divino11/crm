@@ -27,6 +27,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+const Swal = require('sweetalert2');
 const app = new Vue({
     el: '#app'
 });
@@ -50,4 +51,20 @@ $(document).ready(function () {
             $(this).children('ul').attr("aria-expanded", "true");
         }
     });
+});
+
+$('#deleteCRUD button').click(function (event) {
+    event.preventDefault();
+    Swal.fire({
+        title: 'Are you sure?',
+        text: 'You will not be able to recover this imaginary file!',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, keep it'
+    }).then((result) => {
+        if (result.value) {
+            $(this).parent().submit();
+        }
+    })
 });

@@ -396,11 +396,7 @@
             </div>
             <div class="col-md-10">
                 <div class="content-main">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    @include('sweetalert::alert')
                     @yield('content')
                 </div>
             </div>

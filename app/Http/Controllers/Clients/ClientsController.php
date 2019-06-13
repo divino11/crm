@@ -5,15 +5,17 @@ namespace App\Http\Controllers\Clients;
 use App\Clients;
 use App\Http\Requests\Clients\RequestClientsManagment;
 use DemeterChain\C;
+use Exception;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 class ClientsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -23,7 +25,7 @@ class ClientsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -38,17 +40,20 @@ class ClientsController extends Controller
      */
     public function store(RequestClientsManagment $request)
     {
-        $client = new Clients($request->all());
-        $client->save();
+        try {
+            $create = Clients::create($request->all());
+        } catch (Exception $exception) {
+            return back()->with('toast_error', $exception->getMessage());
+        }
 
-        return redirect()->route('clients.index')->with('status', 'Client has been create');
+        return redirect()->route('clients.index')->with('toast_success', 'Client has been create');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return Response
      */
     public function show($id)
     {
@@ -58,34 +63,40 @@ class ClientsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return Response
      */
     public function edit($id)
     {
-        //
+        $client = Clients::find($id);
+
+        return view('users.edit', [
+            'client' => $client
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, Clients $client)
     {
-        //
+        try {
+            $client->update($request->all());
+        } catch (Exception $exception) {
+            return back()->with('toast_error', $exception->getMessage());
+        }
+
+        return redirect()->route('clients.index')->with('toast_success', 'Client has been update');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return Response
      */
-    public function destroy($id)
+    public function destroy(Clients $client)
     {
-        //
+        $client->delete();
+
+        return redirect()->route('clients.index')->with('toast_success', 'Client has been delete');
     }
 }

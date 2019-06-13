@@ -3,7 +3,8 @@
 @section('content')
     <div class="form-group">
         <label for="search">Search: </label>
-        <input type="search" autocomplete="off" class="form-controller search-resource" id="search-resource" name="search">
+        <input type="search" autocomplete="off" class="form-controller search-resource" id="search-resource"
+               name="search">
     </div>
     <table class="table table-striped">
         <thead>
@@ -25,8 +26,7 @@
                 <td>{{$client->birthday}}</td>
                 <td>{{$client->created_at}}</td>
                 <td class="text-right">
-                    <form onsubmit="if(confirm('Удалить?')){return true} else {return false}"
-                          action="{{route('clients.destroy', $client)}}" method="post">
+                    <form action="{{route('clients.destroy', $client)}}" id="deleteCRUD" method="post">
                         <input type="hidden" name="_method" value="DELETE">
                         {{ csrf_field() }}
                         <a class="btn btn-default" href="{{route('clients.edit', $client)}}"><i
@@ -50,18 +50,18 @@
         </tfoot>
     </table>
     <script>
-            $('#search-resource').on('keyup', function () {
-                var value = $(this).val();
-                $.ajax({
-                    type: 'get',
-                    url: '/search',
-                    data: {'search': value},
-                    dataType:'json',
-                    success: function (data) {
-                        console.log(data);
-                        $('tbody').html(data);
-                    }
-                });
+        $('#search-resource').on('keyup', function () {
+            var value = $(this).val();
+            $.ajax({
+                type: 'get',
+                url: '/search',
+                data: {'search': value},
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    $('tbody').html(data);
+                }
             });
+        });
     </script>
 @endsection
