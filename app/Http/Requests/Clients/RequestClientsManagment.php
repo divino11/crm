@@ -24,13 +24,12 @@ class RequestClientsManagment extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required',
             'phone' => 'required',
             'birthday' => 'required',
-            'name_company' => 'required',
-            'site_company' => 'required',
-            'token_company' => 'required'
+            'services' => 'required',
         ];
     }
 }

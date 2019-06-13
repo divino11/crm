@@ -18,20 +18,20 @@
         <th class="text-right">Actions</th>
         </thead>
         <tbody>
-        @forelse($staffs as $staff)
+        @forelse($clients as $client)
             <tr>
-                <td>{{$staff->id}}</td>
-                <td>{{$staff->name}}</td>
-                <td>{{$staff->services}}</td>
-                <td>{{$staff->email}}</td>
-                <td>{{$staff->phone}}</td>
-                <td>{{$staff->birthday}}</td>
-                <td>{{$staff->created_at}}</td>
+                <td>{{$client->id}}</td>
+                <td>{{$client->name}}</td>
+                <td>{{$client->services}}</td>
+                <td>{{$client->email}}</td>
+                <td>{{$client->phone}}</td>
+                <td>{{$client->birthday}}</td>
+                <td>{{$client->created_at}}</td>
                 <td class="text-right">
-                    <form action="{{route('staff.destroy', $staff)}}" id="deleteCRUD" method="post">
+                    <form action="{{route('clients.destroy', $client)}}" id="deleteCRUD" method="post">
                         <input type="hidden" name="_method" value="DELETE">
                         {{ csrf_field() }}
-                        <a class="btn btn-default" href="{{route('staff.edit', $staff)}}"><i
+                        <a class="btn btn-default" href="{{route('clients.edit', $client)}}"><i
                                     class="fa fa-edit"></i></a>
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
                     </form>
@@ -46,7 +46,7 @@
         <tfoot>
         <td colspan="8">
             <ul class="pagination pull-right">
-                {{$staffs->links()}}
+                {{$clients->links()}}
             </ul>
         </td>
         </tfoot>
@@ -56,7 +56,7 @@
             var value = $(this).val();
             $.ajax({
                 type: 'get',
-                url: '/search_staff',
+                url: '/search_clients',
                 data: {'search': value},
                 dataType: 'json',
                 success: function (data) {

@@ -19,7 +19,7 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        return view('users.index', ['clients' => Clients::orderBy('created_at', 'desc')->paginate(10)]);
+        return view('clients.index', ['clients' => Clients::orderBy('created_at', 'desc')->paginate(10)]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        return view('clients.create');
     }
 
     /**
@@ -70,7 +70,7 @@ class ClientsController extends Controller
     {
         $client = Clients::find($id);
 
-        return view('users.edit', [
+        return view('clients.edit', [
             'client' => $client
         ]);
     }

@@ -7,12 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Clients extends Model
 {
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'phone',
         'birthday',
-        'name_company',
-        'site_company',
-        'token_company'
+        'services'
     ];
+
+    public function getNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }

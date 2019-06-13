@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Search;
 
 use App\Clients;
+use App\Staff;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ClientSearchController extends Controller
+class StaffSearchController extends Controller
 {
     public function __invoke(Request $request)
     {
         $output = "";
         if ($request->search != '') {
-            $data = Clients::where('first_name', 'LIKE', '%' . $request->search . '%')
+            $data = Staff::where('first_name', 'LIKE', '%' . $request->search . '%')
                 ->orWhere('last_name', 'like', '%' . $request->search . '%')
                 ->orWhere('email', 'like', '%' . $request->search . '%')
                 ->orWhere('phone', 'like', '%' . $request->search . '%')
@@ -21,7 +22,7 @@ class ClientSearchController extends Controller
                 ->orWhere('created_at', 'like', '%' . $request->search . '%')
                 ->paginate(10);
         } else {
-            $data = Clients::orderBy('created_at', 'desc')->paginate(10);
+            $data = Staff::orderBy('created_at', 'desc')->paginate(10);
         }
         foreach ($data as $product) {
             $output .= '<tr>' .
@@ -34,10 +35,10 @@ class ClientSearchController extends Controller
                 '<td>' . $product->created_at . '</td>' .
                 '<td class="text-right">
                     <form id="deleteCRUD"
-                          action="' . route("clients.destroy", $product) . '" method="post">
+                          action="' . route("staff.destroy", $product) . '" method="post">
                         <input type="hidden" name="_method" value="DELETE">
                         ' . csrf_field() . '
-                        <a class="btn btn-default" href="' . route("clients.edit", $product) . '"><i
+                        <a class="btn btn-default" href="' . route("staff.edit", $product) . '"><i
                                     class="fa fa-edit"></i></a>
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
                     </form>
