@@ -288,28 +288,48 @@
                                     <ul id="sidebarnav">
                                         <li class="clearfix"></li>
 
-                                        <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"
-                                                                     aria-expanded="false"><i
+{{--                                        <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"--}}
+{{--                                                                     aria-expanded="false"><i--}}
+{{--                                                        class="fa fa-desktop"></i><span--}}
+{{--                                                        class="hide-menu">Dashboard</span></a>--}}
+{{--                                            <ul aria-expanded="false" class="collapse">--}}
+{{--                                                <li><a href="https://full.mintone.xyz/server"--}}
+{{--                                                       class="menu_dropdown">Server</a>--}}
+{{--                                                </li>--}}
+{{--                                                <li><a href="https://full.mintone.xyz/project"--}}
+{{--                                                       class="menu_dropdown">Project</a>--}}
+{{--                                                </li>--}}
+{{--                                                <li><a href="https://full.mintone.xyz/analytics"--}}
+{{--                                                       class="menu_dropdown">Analytics</a></li>--}}
+{{--                                                <li><a href="https://full.mintone.xyz/shop"--}}
+{{--                                                       class="menu_dropdown">Shop</a>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
+
+                                        <li><a href="/"><i
                                                         class="fa fa-desktop"></i><span
                                                         class="hide-menu">Dashboard</span></a>
-                                            <ul aria-expanded="false" class="collapse">
-                                                <li><a href="https://full.mintone.xyz/server"
-                                                       class="menu_dropdown">Server</a>
-                                                </li>
-                                                <li><a href="https://full.mintone.xyz/project"
-                                                       class="menu_dropdown">Project</a>
-                                                </li>
-                                                <li><a href="https://full.mintone.xyz/analytics"
-                                                       class="menu_dropdown">Analytics</a></li>
-                                                <li><a href="https://full.mintone.xyz/shop"
-                                                       class="menu_dropdown">Shop</a>
-                                                </li>
-                                            </ul>
                                         </li>
 
                                         <li><a href="https://full.mintone.xyz/role-management"><i
                                                         class="fa fa-folder"></i><span
                                                         class="hide-menu">Role Management</span></a>
+                                        </li>
+
+                                        <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"
+                                                                     aria-expanded="false"><i
+                                                        class="fa fa-users"></i><span
+                                                        class="hide-menu">Staff</span></a>
+                                            <ul aria-expanded="false" class="collapse">
+                                                <li><a href="{{ route('staff.index') }}" class="menu_dropdown">Manage
+                                                        Staff</a></li>
+                                                <li><a href="{{ route('staff.create') }}"
+                                                       class="menu_dropdown">Add
+                                                        New
+                                                        Staff</a>
+                                                </li>
+                                            </ul>
                                         </li>
 
                                         <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"
@@ -322,10 +342,6 @@
                                                 <li><a href="{{ route('clients.create') }}"
                                                        class="menu_dropdown">Add
                                                         New
-                                                        Client</a>
-                                                </li>
-                                                <li><a href="https://full.mintone.xyz/user/deleted"
-                                                       class="menu_dropdown">Deleted
                                                         Client</a>
                                                 </li>
                                             </ul>

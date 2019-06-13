@@ -27,6 +27,7 @@
   "dependencies": {
     "awesome-bootstrap-checkbox": "^1.0.1",
     "flat-icons": "^1.0.0",
+    "flatpickr": "^4.6.1",
     "font-awesome": "^4.7.0",
     "sweetalert2": "^8.12.1"
   }

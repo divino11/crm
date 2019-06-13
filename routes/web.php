@@ -14,6 +14,7 @@
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
     Route::resource('/clients', 'Clients\ClientsController');
+    Route::resource('/staff', 'Staff\StaffController');
     Route::get('/search', 'Search\ClientSearchController');
 });
 Auth::routes(['verify' => true]);

@@ -28,6 +28,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const Swal = require('sweetalert2');
+const flatpickr = require("flatpickr");
+require('select2');
 const app = new Vue({
     el: '#app'
 });
@@ -51,6 +53,8 @@ $(document).ready(function () {
             $(this).children('ul').attr("aria-expanded", "true");
         }
     });
+
+    $("input[type='date']").flatpickr();
 });
 
 $('#deleteCRUD button').click(function (event) {

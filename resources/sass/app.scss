@@ -17,6 +17,12 @@
 //SweetAlerts
 @import '~sweetalert2/dist/sweetalert2.css';
 
+//Flatpickr
+@import "~flatpickr/dist/themes/material_red.css";
+
+//select2
+@import "~select2/dist/css/select2.css";
+
 :active, :hover, input:focus {
   outline: 0 !important;
   outline-offset: 0 !important;
@@ -32,7 +38,7 @@
   height: 100%;
   top: 0px;
   z-index: 20;
-  padding-top: 90px;
+  padding-top: 50px;
   background: #f6f7fb;
 }
 
@@ -129,7 +135,7 @@
 }
 
 .content-main {
-  padding-top: 90px;
+  padding-top: 70px;
 }
 
 .card {
@@ -299,4 +305,8 @@
   border-radius: 10px;
   border: 1px solid #d4d5d8;
   padding: 5px 10px;
+}
+
+.flatpickr-input[readonly] {
+  background-color: #fff !important;
 }
