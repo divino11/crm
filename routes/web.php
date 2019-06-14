@@ -13,6 +13,7 @@
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
+    Route::resource('/users', 'Users\UsersController');
     Route::resource('/clients', 'Clients\ClientsController');
     Route::resource('/staff', 'Staff\StaffController');
     Route::resource('roles','RoleController');

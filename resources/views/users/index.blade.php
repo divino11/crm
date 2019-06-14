@@ -17,19 +17,19 @@
         <th class="text-right">Actions</th>
         </thead>
         <tbody>
-        @forelse($clients as $client)
+        @forelse($users as $user)
             <tr>
-                <td>{{$client->id}}</td>
-                <td>{{$client->name}}</td>
-                <td>{{$client->email}}</td>
-                <td>{{$client->phone}}</td>
-                <td>{{$client->birthday}}</td>
-                <td>{{$client->created_at}}</td>
+                <td>{{$user->id}}</td>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->phone}}</td>
+                <td>{{$user->birthday}}</td>
+                <td>{{$user->created_at}}</td>
                 <td class="text-right">
-                    <form action="{{route('clients.destroy', $client)}}" id="deleteCRUD" method="post">
+                    <form action="{{route('users.destroy', $user)}}" id="deleteCRUD" method="post">
                         <input type="hidden" name="_method" value="DELETE">
                         {{ csrf_field() }}
-                        <a class="btn btn-default" href="{{route('clients.edit', $client)}}"><i
+                        <a class="btn btn-default" href="{{route('users.edit', $user)}}"><i
                                     class="fa fa-edit"></i></a>
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
                     </form>
@@ -44,7 +44,7 @@
         <tfoot>
         <td colspan="7">
             <ul class="pagination pull-right">
-                {{$clients->links()}}
+                {{$users->links()}}
             </ul>
         </td>
         </tfoot>
@@ -54,7 +54,7 @@
             var value = $(this).val();
             $.ajax({
                 type: 'get',
-                url: '/search',
+                url: '/search_user',
                 data: {'search': value},
                 dataType: 'json',
                 success: function (data) {

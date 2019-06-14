@@ -312,10 +312,29 @@
                                                         class="hide-menu">Dashboard</span></a>
                                         </li>
 
-                                        <li><a href="https://full.mintone.xyz/role-management"><i
+                                        @role('super-admin')
+
+                                        <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"
+                                                                     aria-expanded="false"><i
+                                                        class="fa fa-users"></i><span
+                                                        class="hide-menu">Users</span></a>
+                                            <ul aria-expanded="false" class="collapse">
+                                                <li><a href="{{ route('users.index') }}" class="menu_dropdown">Manage
+                                                        Users</a></li>
+                                                <li><a href="{{ route('users.create') }}"
+                                                       class="menu_dropdown">Add
+                                                        New
+                                                        User</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="#"><i
                                                         class="fa fa-folder"></i><span
                                                         class="hide-menu">Role Management</span></a>
                                         </li>
+
+                                        @endrole
 
                                         <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"
                                                                      aria-expanded="false"><i
