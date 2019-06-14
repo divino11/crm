@@ -30,6 +30,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const Swal = require('sweetalert2');
 const flatpickr = require("flatpickr");
 require('select2');
+require('fullcalendar');
+window.moment = require('moment');
 const app = new Vue({
     el: '#app'
 });

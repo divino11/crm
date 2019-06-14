@@ -29,6 +29,8 @@
                     <form action="{{route('users.destroy', $user)}}" id="deleteCRUD" method="post">
                         <input type="hidden" name="_method" value="DELETE">
                         {{ csrf_field() }}
+                        <a class="btn btn-default" href="{{route('users.show', $user)}}"><i
+                                    class="fa fa-eye"></i></a>
                         <a class="btn btn-default" href="{{route('users.edit', $user)}}"><i
                                     class="fa fa-edit"></i></a>
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>

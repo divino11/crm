@@ -19,6 +19,11 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('roles','RoleController');
     Route::get('/search_clients', 'Search\ClientSearchController');
     Route::get('/search_staff', 'Search\StaffSearchController');
+    Route::resource('/events', 'EventController');
+    Route::post('events_ajax_update',
+        ['uses' => 'EventController@update', 'as' => 'event.ajax_update']);
+    Route::post('events_ajax_store',
+        ['uses' => 'EventController@store', 'as' => 'event.ajax_store']);
 });
 Auth::routes(['verify' => true]);
 

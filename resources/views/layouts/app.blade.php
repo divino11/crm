@@ -288,25 +288,6 @@
                                     <ul id="sidebarnav">
                                         <li class="clearfix"></li>
 
-{{--                                        <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"--}}
-{{--                                                                     aria-expanded="false"><i--}}
-{{--                                                        class="fa fa-desktop"></i><span--}}
-{{--                                                        class="hide-menu">Dashboard</span></a>--}}
-{{--                                            <ul aria-expanded="false" class="collapse">--}}
-{{--                                                <li><a href="https://full.mintone.xyz/server"--}}
-{{--                                                       class="menu_dropdown">Server</a>--}}
-{{--                                                </li>--}}
-{{--                                                <li><a href="https://full.mintone.xyz/project"--}}
-{{--                                                       class="menu_dropdown">Project</a>--}}
-{{--                                                </li>--}}
-{{--                                                <li><a href="https://full.mintone.xyz/analytics"--}}
-{{--                                                       class="menu_dropdown">Analytics</a></li>--}}
-{{--                                                <li><a href="https://full.mintone.xyz/shop"--}}
-{{--                                                       class="menu_dropdown">Shop</a>--}}
-{{--                                                </li>--}}
-{{--                                            </ul>--}}
-{{--                                        </li>--}}
-
                                         <li><a href="/"><i
                                                         class="fa fa-desktop"></i><span
                                                         class="hide-menu">Dashboard</span></a>
