@@ -73,6 +73,12 @@
             $('select[name="color"]').select2({
                 wrap: true,
             });
+
+            $('input[name="start_time"]').flatpickr({
+                enableTime: true,
+                dateFormat: "Y-m-d H:i:s",
+            });
+
             $('#calendar').fullCalendar({
                 header: {
                     left: 'prev,next today',
@@ -80,10 +86,12 @@
                     right: 'month,agendaWeek,agendaDay'
                 },
                 selectable: true,
+                /*
+                Create event
+                 */
                 select: function (start, end, jsEvent, view) {
                     $('#new_start_time').val(moment(start).format('YYYY-MM-DD HH:MM:SS'));
                     $('#createModal').modal();
-
                 },
                 events: [
                         @foreach($events as $event)
@@ -104,6 +112,9 @@
                     },
                     @endforeach
                 ],
+                /*
+               Edit event
+                */
                 eventClick: function(calEvent, jsEvent, view) {
                     $('#event_id').val(calEvent.id);
                     $('#text').val(calEvent.title);
@@ -116,7 +127,9 @@
         });
 
         $(document).ready(function() {
-
+            /*
+            Handler Edit Event
+             */
             $('#event_update').click(function(e) {
                 e.preventDefault();
                 var data = {
@@ -143,7 +156,9 @@
                     }
                 });
             });
-
+            /*
+            Handler Create Event
+             */
             $('#create_update').click(function(e) {
                 e.preventDefault();
                 var data = {
