@@ -348,3 +348,14 @@
   width: 100% !important;
   height: calc(1.6em + 0.75rem + 2px) !important;
 }
+
+.card-box {
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid transparent;
+  padding: 1.5rem;
+  margin-bottom: 24px;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+  border-radius: 3px;
+}

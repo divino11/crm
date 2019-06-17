@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -30,4 +32,14 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getUsersCountAttribute()
+    {
+        return $this->whereDate('created_at', Carbon::today())->count();
+    }
+
+    public function getUsersOfAllAttribute()
+    {
+        return ($this->users_count / $this->count()) * 100;
+    }
 }

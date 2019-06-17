@@ -8,12 +8,12 @@ use App\Event;
 
 class EventController extends Controller
 {
-    public function index()
+    /*public function index()
     {
         $data = Event::all();
 
         return view('fullcalendar', ['events' => $data]);
-    }
+    }*/
 
     public function store(Request $request)
     {

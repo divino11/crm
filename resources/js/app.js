@@ -31,7 +31,9 @@ const Swal = require('sweetalert2');
 const flatpickr = require("flatpickr");
 require('select2');
 require('fullcalendar');
+const knob = require('jquery-knob');
 window.moment = require('moment');
+
 const app = new Vue({
     el: '#app'
 });

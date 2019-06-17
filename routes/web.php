@@ -16,7 +16,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('/users', 'Users\UsersController');
     Route::resource('/clients', 'Clients\ClientsController');
     Route::resource('/staff', 'Staff\StaffController');
-    Route::resource('roles','RoleController');
+    //Route::resource('roles','RoleController');
     Route::get('/search_clients', 'Search\ClientSearchController');
     Route::get('/search_staff', 'Search\StaffSearchController');
     Route::resource('/events', 'EventController');
