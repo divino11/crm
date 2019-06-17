@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Orders;
+use App\Services;
+use App\Staff;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;

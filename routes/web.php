@@ -16,9 +16,11 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('/users', 'Users\UsersController');
     Route::resource('/clients', 'Clients\ClientsController');
     Route::resource('/staff', 'Staff\StaffController');
+    Route::resource('/services', 'Services\ServicesController');
     //Route::resource('roles','RoleController');
     Route::get('/search_clients', 'Search\ClientSearchController');
     Route::get('/search_staff', 'Search\StaffSearchController');
+    Route::get('/search_service', 'Search\ServiceSearchController');
     Route::resource('/events', 'EventController');
     Route::post('events_ajax_update',
         ['uses' => 'EventController@update', 'as' => 'event.ajax_update']);

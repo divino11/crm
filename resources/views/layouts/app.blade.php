@@ -349,9 +349,19 @@
                                         <li>
                                             <hr>
                                         </li>
-                                        <li><a href="https://full.mintone.xyz/crud-generator"><i
-                                                        class="fa fa-th-large"></i><span
-                                                        class="hide-menu">CRUD Generator</span></a>
+                                        <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"
+                                                                     aria-expanded="false"><i
+                                                        class="fa fa-users"></i><span
+                                                        class="hide-menu">Services</span></a>
+                                            <ul aria-expanded="false" class="collapse">
+                                                <li><a href="{{ route('services.index') }}" class="menu_dropdown">Manage
+                                                        Services</a></li>
+                                                <li><a href="{{ route('services.create') }}"
+                                                       class="menu_dropdown">Add
+                                                        New
+                                                        Service</a>
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"
                                                                      aria-expanded="false"><i
