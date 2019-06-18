@@ -21,8 +21,8 @@
                         </select>
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="phone">Price: </label>
-                        <input id="phone" type="tel" name="phone" class="form-control" value="{{ old('price', $service->price) }}" placeholder="Enter Price">
+                        <label for="price">Price: </label>
+                        <input id="price" type="text" name="price" class="form-control" value="{{ old('price', $service->price) }}" placeholder="Enter Price">
                     </div>
                     <div class="form-group col-md-12">
                         <button class="btn btn-primary pull-right">Update</button>

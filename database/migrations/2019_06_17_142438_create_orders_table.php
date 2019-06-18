@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('staff_id')->references('id')->on('staff');
             $table->integer('service_id')->unsigned();
             $table->foreign('service_id')->references('id')->on('services');
+            $table->decimal('price');
             $table->integer('quantity');
             $table->timestamps();
         });

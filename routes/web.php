@@ -17,10 +17,14 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('/clients', 'Clients\ClientsController');
     Route::resource('/staff', 'Staff\StaffController');
     Route::resource('/services', 'Services\ServicesController');
+    Route::resource('/orders', 'Orders\OrderController');
     //Route::resource('roles','RoleController');
     Route::get('/search_clients', 'Search\ClientSearchController');
     Route::get('/search_staff', 'Search\StaffSearchController');
     Route::get('/search_service', 'Search\ServiceSearchController');
+    Route::get('/search_order', 'Search\OrderSearchController');
+    Route::get('/get_price', 'Services\GetPriceController');
+
     Route::resource('/events', 'EventController');
     Route::post('events_ajax_update',
         ['uses' => 'EventController@update', 'as' => 'event.ajax_update']);

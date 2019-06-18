@@ -363,6 +363,22 @@
                                                 </li>
                                             </ul>
                                         </li>
+
+                                        <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"
+                                                                     aria-expanded="false"><i
+                                                        class="fa fa-users"></i><span
+                                                        class="hide-menu">Orders</span></a>
+                                            <ul aria-expanded="false" class="collapse">
+                                                <li><a href="{{ route('orders.index') }}" class="menu_dropdown">Manage
+                                                        Orders</a></li>
+                                                <li><a href="{{ route('orders.create') }}"
+                                                       class="menu_dropdown">Add
+                                                        New
+                                                        Order</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
                                         <li class="menu_dropdown"><a class="has-arrow waves-effect waves-dark" href="#"
                                                                      aria-expanded="false"><i
                                                         class="fa fa-eye"></i><span

@@ -10,6 +10,7 @@ class Orders extends Model
         'client_id',
         'staff_id',
         'service_id',
+        'price',
         'quantity',
     ];
 
